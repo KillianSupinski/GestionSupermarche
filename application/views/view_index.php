@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="JS/mesFonctions.js"></script>
+    <script src="JS/fonction.js"></script>
     <script src="JQuery/jquery-3.1.1.js"></script>
     <script>
  
@@ -15,9 +15,12 @@
             {
                 $('select[id=idSecteur]').change
                 (
+                    
                     function()
-                    {
+                    {  
+                        
                         AfficherLesRayons($(this).val());
+                        
                     }
                 )
             }
@@ -27,18 +30,23 @@
 </head>
 
 <body>
+<label>Les secteurs</label><br>
 <select id="idSecteur">
     <?php 
     
     foreach($lesSecteurs as $unSecteur)
     {
-       echo " <option value='".$unSecteur->numS."'>"; echo $unSecteur->nomS ;
+       echo " <option value='".$unSecteur->numS."'>"; echo $unSecteur->nomS;
     }
     
     ?>
     </select> 
-
-    <div name="divRayons">Les Rayons</div><br>
-    <div name="divEmploye">Les Employés</div><br>
+    <br><br>
+    <label>Les Rayons</label><br>
+    <div id="divRayons"></div><br><br>
+    <label>Les employés</label>
+    <div id="divEmploye"></div><br>
+    <label>Heure total</label><br>
+    <div id="divHeure"></div>
 </body>
 </html>
