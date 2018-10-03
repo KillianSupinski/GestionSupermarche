@@ -63,7 +63,7 @@ $.ajax
         data:"idRay="+idRayon,
         success:function(data)
         {
-            console.log('toto');
+            
             $("#divHeure").empty();
             $("#divHeure").append(data);
         },
